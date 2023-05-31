@@ -12,7 +12,11 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/videos" element={<VideoGallery />} />
+        <Route path="/videos" element={<VideoGallery videos={[]} handleDownloadVideo={function (videoUrl: string, id: number): Promise<void> {
+          throw new Error("Function not implemented.");
+        } } handleLoadMoreVideos={function (): Promise<void> {
+          throw new Error("Function not implemented.");
+        } } />} />
         <Route path="/videos/:id" element={<VideoDetails />} />
         <Route path="/search/:query" element={<SearchResults />} />
         <Route path="/photos/:id" element={<PhotoDetail />} />
